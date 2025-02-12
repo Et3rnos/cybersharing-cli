@@ -13,7 +13,6 @@ dependencies = [
   "requests_toolbelt",
   "typer"
 ]
-license = "MIT" 
 authors = [
   {name = "Et3rnos", email = "et3rnos@gmail.com"}
 ]
