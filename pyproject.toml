@@ -16,6 +16,8 @@ dependencies = [
 authors = [
   {name = "Et3rnos", email = "et3rnos@gmail.com"}
 ]
+license = {file = "LICENSE"}
+keywords = ["cybersharing", "cli"]
 
 [project.scripts]
 cybersharing = "cybersharing.main:main"
