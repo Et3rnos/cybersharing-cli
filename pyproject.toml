@@ -6,7 +6,7 @@ build-backend = "setuptools.build_meta"
 name = "cybersharing"
 description = "The official Cybersharing CLI"
 readme = "README.md"
-version = "1.0.0"
+version = "1.0.1"
 dependencies = [
   "pycryptodome",
   "requests",
