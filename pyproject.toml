@@ -1,0 +1,16 @@
+[build-system]
+requires = ["setuptools"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "cybersharing"
+version = "1.0.0"
+dependencies = [
+  "pycryptodome",
+  "requests",
+  "requests_toolbelt",
+  "typer"
+]
+
+[project.scripts]
+cybersharing = "cybersharing.main:main"
