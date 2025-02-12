@@ -156,7 +156,7 @@ def download(url: str,
         raise typer.Abort()
 
     fragment = url.split("/")[-1]
-    details = get_container_details(fragment, password)
+    details, password = get_container_details(fragment, password)
 
     uploads = details["uploads"]
     total_files = len(uploads)

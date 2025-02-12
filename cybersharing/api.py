@@ -67,7 +67,7 @@ def get_container_details(fragment: str, password: str = None, salt: bytes = Non
                 raise typer.Abort()
 
     response.raise_for_status()
-    return response.json()
+    return response.json(), password
 
 
 def preupload_file(file: str, pad_to: int, encryption_key: bytes = None, encrypt: bool = False, padding: int = None) -> str:
