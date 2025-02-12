@@ -74,6 +74,7 @@ def upload(files: List[str],
            extra_long_url: bool = typer.Option(False, help="Generate an extra long URL"),
            public: bool = typer.Option(False, help="Add the upload to your public profile"),
            save_to_history: bool = typer.Option(False, help="Save the upload to the IP history"),
+           permanent: bool = typer.Option(False, help="Disable expiration date"),
            expiration_date: datetime.datetime = typer.Option(datetime.datetime.now(
            ) + datetime.timedelta(days=7), help="Expiration date, defaults to 7 days from now"),
            expiration_days: int = typer.Option(None, help="Relative expiration time in days"),
@@ -121,9 +122,12 @@ def upload(files: List[str],
     if expiration_date < datetime.datetime.now() + datetime.timedelta(minutes=5):
         typer.echo("Minimum expiration time is 5 minutes")
         raise typer.Abort()
-    elif not authenticated and expiration_date > datetime.datetime.now() + datetime.timedelta(days=7):
+    elif not authenticated and (expiration_date > datetime.datetime.now() + datetime.timedelta(days=7) or permanent):
         typer.echo("Maximum expiration time for anonymous users is 7 days. Please login to remove this limit.")
         raise typer.Abort()
+
+    if permanent:
+        expiration_date = None
 
     preupload_ids = []
     for file in files:

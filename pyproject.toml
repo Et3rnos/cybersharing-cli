@@ -4,6 +4,8 @@ build-backend = "setuptools.build_meta"
 
 [project]
 name = "cybersharing"
+description = "The official Cybersharing CLI"
+readme = "README.md"
 version = "1.0.0"
 dependencies = [
   "pycryptodome",
@@ -11,6 +13,15 @@ dependencies = [
   "requests_toolbelt",
   "typer"
 ]
+license = "MIT"
+license-files = ["LICENSE"]
+authors = [
+  {name = "Et3rnos", email = "et3rnos@gmail.com"}
+]
 
 [project.scripts]
 cybersharing = "cybersharing.main:main"
+
+[project.urls]
+Homepage = "https://github.com/Et3rnos/cybersharing-cli"
+Issues = "https://github.com/Et3rnos/cybersharing-cli/issues"
