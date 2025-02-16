@@ -32,7 +32,7 @@ def create_container(preupload_ids: List[str], password: str, encryption_salt: b
         "preuploads": preupload_ids,
         "description": description,
         "encryptionSalt": encryption_salt.hex() if encryption_salt else None,
-        "expirationDate": expiration_date.isoformat(),
+        "expirationDate": expiration_date.isoformat() if expiration_date else None,
         "extraLongUrl": extra_long_url,
         "isEncrypted": is_encrypted,
         "isPublic": is_public,
